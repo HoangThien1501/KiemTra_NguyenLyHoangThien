@@ -1,0 +1,12 @@
+﻿@model KiemTra_NguyenLyHoangThien.Models.SinhVien
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DangNhap</h2>
+<td>Mã sinh viên</td>
+<table>
+    @Html.EditorFor(model => model.MaSV, new { htmlAttributes = new { @class = "form-control" } })
+</table>
+<input type="submit" value="Đăng nhập" class="btn btn-default" />

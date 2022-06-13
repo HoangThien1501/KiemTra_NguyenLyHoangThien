@@ -1,4 +1,5 @@
-﻿using System;
+﻿using KiemTra_NguyenLyHoangThien.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,19 +9,19 @@ namespace KiemTra_NguyenLyHoangThien.Controllers
 {
     public class HomeController : Controller
     {
+        TestContext context = new TestContext();
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult HocPhan()
         {
-            ViewBag.Message = "Your application description page.";
-
-            return View();
+            var all_hp = from tt in context.HocPhans select tt;
+            return View(all_hp);
         }
 
-        public ActionResult Contact()
+        public ActionResult DangKy()
         {
             ViewBag.Message = "Your contact page.";
 
